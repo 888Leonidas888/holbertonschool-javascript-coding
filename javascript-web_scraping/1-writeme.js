@@ -5,7 +5,7 @@ const fs = require('fs');
 const FILE_PATH = process.argv[2];
 const STRING_TO_WRITE = process.argv[3];
 
-if (!FILE_PATH || !STRING_TO_WRITE) {
+if (!FILE_PATH) {
   console.log('Error: proporciona una ruta valida y contenido.');
   process.exit(1);
 }
