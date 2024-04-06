@@ -2,6 +2,7 @@
 // How many completed?
 
 const request = require('request');
+
 const url = process.argv[2];
 
 if (!url) {
@@ -9,7 +10,7 @@ if (!url) {
   process.exit(1);
 }
 
-request(url, function (err, response, body) {
+request(url, (err, response, body) => {
   if (err) {
     console.log(err);
     process.exit(1);
@@ -22,7 +23,7 @@ request(url, function (err, response, body) {
 
   const todos = JSON.parse(body);
   const todosCompleted = {};
-  
+
   todos.forEach((todo) => {
     if (todo.completed) {
       if (todosCompleted[todo.userId]) {
