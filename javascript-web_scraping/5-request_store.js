@@ -7,7 +7,7 @@ const url = process.argv[2];
 const filePath = process.argv[3];
 
 if (!url || !filePath) {
-  console('Ingrea un URL y un archivo de destino');
+  console.log('Ingrea un URL y un archivo de destino');
   process.exit(1);
 }
 
@@ -22,7 +22,7 @@ request(url, function (err, response, body) {
       if (err) {
         console.log(err);
       } else {
-        console.log(`Archivo creado en ${filePath}`);
+        console.log(body);
       }
     });
   } else {
