@@ -21,8 +21,6 @@ request(url, function (err, response, body) {
     fs.writeFile(filePath, body, 'utf-8', function (err) {
       if (err) {
         console.log(err);
-      } else {
-        console.log(body);
       }
     });
   } else {
