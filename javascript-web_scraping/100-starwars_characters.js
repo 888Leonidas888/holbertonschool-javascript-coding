@@ -1,3 +1,5 @@
+#!/usr/bin/node
+
 const request = require('request');
 const idMovie = process.argv[2];
 
