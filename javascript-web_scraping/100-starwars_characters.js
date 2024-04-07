@@ -27,7 +27,7 @@ request(url, function (err, response, body) {
               console.log(character.name);
             } else {
               console.log('Houston tenemos otro problema');
-              process.exit(1)
+              process.exit(1);
             }
           }
         });
