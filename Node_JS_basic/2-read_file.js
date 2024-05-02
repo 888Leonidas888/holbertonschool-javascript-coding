@@ -27,12 +27,11 @@ function getInfo(personObj, field, condition) {
         names.push(p.firstname);
       }
     });
-    return {
-      total,
-      names,
-    };
   }
-  return {};
+  return {
+    total,
+    names,
+  };
 }
 
 function stats(persons) {
@@ -41,7 +40,7 @@ function stats(persons) {
   const swe = getInfo(personObj, 'field', 'SWE');
 
   console.log(`Number of students: ${personObj.length}`);
-  console.log(`Number of students in CS : ${cs.total}. List:${cs.names.join(',')}`);
+  console.log(`Number of students in CS: ${cs.total}. List:${cs.names.join(',')}`);
   console.log(`Number of students in SWE: ${swe.total}. List:${swe.names.join(',')}`);
 }
 function countStudents(filePath) {
