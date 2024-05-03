@@ -49,7 +49,7 @@ function countStudents(filePath) {
     throw new Error('Cannot load the database');
   } else {
     const content = fs.readFileSync(filePath, 'utf-8');
-    const persons = content.split('\n');
+    const persons = content.split('\r\n').filter((line) => line.trim() !== '');
     stats(persons);
   }
 }
