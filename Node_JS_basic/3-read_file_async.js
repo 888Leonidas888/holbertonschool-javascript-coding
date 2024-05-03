@@ -10,20 +10,20 @@ class Person {
   }
 }
 
-// function getPersons(persons) {
-//   return persons
-//     .slice(1)
-//     .map((p) => (p ? new Person(p) : null))
-//     .filter((p) => p !== null);
-// }
 function getPersons(persons) {
-  const personObj = [];
-  if (Array.isArray(persons)) {
-    persons.shift();
-    persons.map((p) => personObj.push(new Person(p)));
-  }
-  return personObj;
+  return persons
+    .slice(1)
+    .map((p) => (p ? new Person(p) : null))
+    .filter((p) => p !== null);
 }
+// function getPersons(persons) {
+//   const personObj = [];
+//   if (Array.isArray(persons)) {
+//     persons.shift();
+//     persons.map((p) => personObj.push(new Person(p)));
+//   }
+//   return personObj;
+// }
 
 function getInfo(personObj, field, condition) {
   let total = 0;
