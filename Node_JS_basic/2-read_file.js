@@ -43,12 +43,13 @@ function stats(persons) {
   console.log(`Number of students in CS: ${cs.total}. List:${cs.names.join(',')}`);
   console.log(`Number of students in SWE: ${swe.total}. List:${swe.names.join(',')}`);
 }
+
 function countStudents(filePath) {
   if (!fs.existsSync(filePath)) {
     throw new Error('Cannot load the database');
   } else {
     const content = fs.readFileSync(filePath, 'utf-8');
-    const persons = content.split('\r\n');
+    const persons = content.split('\n');
     stats(persons);
   }
 }
