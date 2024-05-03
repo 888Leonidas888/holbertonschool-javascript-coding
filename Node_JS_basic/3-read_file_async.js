@@ -10,11 +10,19 @@ class Person {
   }
 }
 
+// function getPersons(persons) {
+//   return persons
+//     .slice(1)
+//     .map((p) => (p ? new Person(p) : null))
+//     .filter((p) => p !== null);
+// }
 function getPersons(persons) {
-  return persons
-    .slice(1)
-    .map((p) => (p ? new Person(p) : null))
-    .filter((p) => p !== null);
+  const personObj = [];
+  if (Array.isArray(persons)) {
+    persons.shift();
+    persons.map((p) => personObj.push(new Person(p)));
+  }
+  return personObj;
 }
 
 function getInfo(personObj, field, condition) {
@@ -41,7 +49,9 @@ function stats(persons) {
   const b = `Number of students in CS: ${cs.total}. List:${cs.names.join(',')}`;
   const c = `Number of students in SWE: ${swe.total}. List:${swe.names.join(',')}`;
 
-  console.log(`${a}\n${b}\n${c}`);
+  console.log(a);
+  console.log(b);
+  console.log(c);
 }
 
 function countStudents(filePath) {
