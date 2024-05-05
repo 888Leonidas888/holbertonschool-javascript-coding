@@ -79,7 +79,7 @@ const handleRequest = (req, res) => {
         res.end(`This is the list of our students\n${data}`);
       })
       .catch((err) => {
-        res.statusCode = 200;
+        res.statusCode = 500;
         res.end(err.message);
       });
   } else {
