@@ -69,7 +69,7 @@ const handleRequest = (req, res) => {
     res.statusCode = 200;
     res.end('Hello Holberton School!');
   } else if (req.url === '/students') {
-    const database = process.argv[2];
+    const database = process.argv[2] !== undefined ? process.argv[2] : '';
     countStudents(database)
       .then((data) => {
         res.statusCode = 200;
