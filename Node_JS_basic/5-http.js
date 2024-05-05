@@ -54,6 +54,9 @@ function countStudents(filePath) {
         reject(new Error('Cannot load the database'));
       } else {
         const persons = data.split('\n').filter((line) => line.trim() !== '');
+        if (persons.length === 0) {
+          reject(new Error('Cannot load the database'));
+        }
         resolve(stats(persons));
       }
     });
