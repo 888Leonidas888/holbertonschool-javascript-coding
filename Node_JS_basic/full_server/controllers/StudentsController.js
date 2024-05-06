@@ -14,7 +14,8 @@ export default class StudentsController {
         res.status(200).send(`${textResponse.slice(0, -1)}`);
       })
       .catch((err) => {
-        res.status(500).send(err.message);
+        const textResponse = 'This is the list of our students\n';
+        res.status(500).send(`${textResponse}${err.message}`);
       });
   }
 
