@@ -54,7 +54,7 @@ function readDatabase(filePath) {
       if (err) {
         reject(new Error('Cannot load the database'));
       } else {
-        const persons = data.split('\r\n').filter((line) => line.trim() !== '');
+        const persons = data.split('\n').filter((line) => line.trim() !== '');
         if (persons.length === 0) {
           reject(new Error('Cannot load the database'));
         }
