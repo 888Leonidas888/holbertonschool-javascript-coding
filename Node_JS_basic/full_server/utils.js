@@ -1,4 +1,5 @@
 const fs = require('fs');
+const os = require('os')
 
 class Person {
   constructor(data) {
@@ -54,7 +55,8 @@ function readDatabase(filePath) {
       if (err) {
         reject(new Error('Cannot load the database'));
       } else {
-        const persons = data.split('\n').filter((line) => line.trim() !== '');
+        const lineSeparator = os.EOL;
+        const persons = data.split(lineSeparator).filter((line) => line.trim() !== '');
         if (persons.length === 0) {
           reject(new Error('Cannot load the database'));
         }
