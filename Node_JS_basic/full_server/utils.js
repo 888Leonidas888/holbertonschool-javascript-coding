@@ -1,5 +1,5 @@
 const fs = require('fs');
-const os = require('os')
+const os = require('os');
 
 class Person {
   constructor(data) {
